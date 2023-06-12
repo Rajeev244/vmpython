@@ -1,0 +1,15 @@
+services:
+  app:
+    image: infracloudio/csvserver
+    ports:
+      - 9393:9300
+    volumes:
+      - /root/csvserver/solution/inputFile:/csvserver/inputdata
+    env_file:
+      - csvserver.env
+  monitor:
+    image: prom/prometheus:v2.22.0
+    ports:
+      - 9090:9090
+    volumes:
+      - /root/csvserver/solution/promethus.yml:/etc/prometheus/prometheus.yml

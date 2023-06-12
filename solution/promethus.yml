@@ -1,0 +1,5 @@
+scrape_configs:
+  - job_name: 'config'
+    static_configs:
+      - targets: ['localhost:9393']  # Replace with your application's host and port
+
